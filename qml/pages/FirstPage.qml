@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    property string packagePath: Qt.resolvedUrl("../../data/harbour-warehouse-0.3-19.armv7hl.rpm")
+    property string packagePath: Qt.resolvedUrl("../../data/harbour-warehouse-0.3-20.armv7hl.rpm")
     onPackagePathChanged: {
         console.log("PackagePath", packagePath);
     }
@@ -44,7 +44,6 @@ Page {
                 if (packageStatus == 1) {
                     console.log("Warehouse installed, exiting...");
                     installing = false;
-                    Qt.quit();
                 } else if (packageStatus == 2) {
                     installing = true;
                 } else {

@@ -1,4 +1,5 @@
 #include <QtQuick>
+#include <QFileSystemWatcher>
 
 #include <sailfishapp.h>
 #include "deviceinfo.h"
@@ -17,6 +18,9 @@ int main(int argc, char *argv[])
     //return SailfishApp::main(argc, argv);
 
     QGuiApplication *app = SailfishApp::application(argc, argv);
+    QFileSystemWatcher fileWatcher;
+    fileWatcher.addPath("/usr/bin/harbour-warehouse-installer");
+    QObject::connect(&fileWatcher, SIGNAL(fileChanged(const QString&)), app, SLOT(quit()));
 
     /*
     QTranslator qtTranslator;

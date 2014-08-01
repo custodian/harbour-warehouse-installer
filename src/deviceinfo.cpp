@@ -45,18 +45,18 @@ QVariant DeviceInfo::sideloading()
 
 void DeviceInfo::d_onPackageProgressChanged(QString packageName, int progress)
 {
-    qDebug() << "packageProgressChanged" << packageName << progress;
+    //qDebug() << "packageProgressChanged" << packageName << progress;
     emit packageProgressChanged(packageName, progress);
 }
 
 void DeviceInfo::d_onPackageStatusChanged(QString packageName, int status)
 {
-    qDebug() << "packageStatusChanged" << packageName << status;
+    //qDebug() << "packageStatusChanged" << packageName << status;
     emit packageStatusChanged(packageName,status);
 }
 
 void DeviceInfo::d_onPackageError(QString error)
 {
-    qDebug() << "packageError" << error;
+    //qDebug() << "packageError" << error;
     emit packageError(error);
 }
